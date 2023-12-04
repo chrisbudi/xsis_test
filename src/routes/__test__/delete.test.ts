@@ -16,6 +16,6 @@ it("delete the movie", async () => {
   const movieResponse = await request(app)
     .get(`/api/movie/${res.body.id}`)
     .send({});
-  console.log(movieResponse.body);
+
   expect(movieResponse.body.errors).not.toBe(undefined);
 });

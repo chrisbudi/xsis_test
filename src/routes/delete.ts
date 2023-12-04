@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
-import { NotFoundError } from "@cwsource/common";
 import express, { Request, Response } from "express";
+import { NotFoundError } from "../errors/not-found-error";
 
 const prisma = new PrismaClient();
 

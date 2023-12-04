@@ -1,10 +1,6 @@
+import { validateRequest } from "../middleware/validate-request";
 import { PrismaClient } from "@prisma/client";
-import {
-  NotAuthorizedError,
-  NotFoundError,
-  requireAuth,
-  validateRequest,
-} from "@cwsource/common";
+import { NotFoundError } from "../errors/not-found-error";
 import express, { Request, Response } from "express";
 import { body } from "express-validator";
 

@@ -2,7 +2,9 @@ import express from "express";
 import "express-async-errors";
 import { json } from "body-parser";
 
-import { errorHandler, NotFoundError } from "@cwsource/common";
+import { NotFoundError } from "./errors/not-found-error";
+import { errorHandler } from "./middleware/error-handler";
+
 import { createMovieRouter } from "./routes/new";
 import { showMovieRouter } from "./routes/show";
 import { indexMovieRouter } from "./routes";

@@ -1,6 +1,5 @@
-import { NotFoundError } from "@cwsource/common";
+import { NotFoundError } from "../errors/not-found-error";
 import express, { Request, Response } from "express";
-import { body } from "express-validator";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();

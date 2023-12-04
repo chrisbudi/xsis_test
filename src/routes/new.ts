@@ -1,7 +1,7 @@
-import { validateRequest } from "@cwsource/common";
 import express, { Request, Response } from "express";
 import { body } from "express-validator";
 import { PrismaClient } from "@prisma/client";
+import { validateRequest } from "../middleware/validate-request";
 
 const router = express.Router();
 const prisma = new PrismaClient();
