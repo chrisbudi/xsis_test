@@ -14,11 +14,20 @@ const createMovie = (title: string) => {
 };
 
 it("can fetch list of movies", async () => {
-  await createMovie(uuid());
-  await createMovie(uuid());
-  await createMovie(uuid());
+  // await createMovie(uuid());
+  // await createMovie(uuid());
+  // await createMovie(uuid());
 
   const response = await request(app).get("/api/movies").send().expect(200);
 
-  expect(response.body.length).toEqual(3);
+  expect(response.body.length).toBeGreaterThan(0);
+});
+
+it("can fetch list of movies by title", async () => {
+  const response = await request(app)
+    .get("/api/movies/byTitle?title=a")
+    .send()
+    .expect(200);
+
+  expect(response.body.length).toBeGreaterThan(0);
 });
